@@ -1,17 +1,8 @@
-# VIT — Video In Terminal
-
-Play YouTube videos as ASCII art **with audio** directly in your terminal.
-
-```
-  ██╗   ██╗██╗████████╗
-  ██║   ██║██║╚══██╔══╝
-  ██║   ██║██║   ██║
-  ╚██╗ ██╔╝██║   ██║
-   ╚████╔╝ ██║   ██║
-    ╚═══╝  ╚═╝   ╚═╝
-  Video In Terminal
-```
-
+# VIT 
+what is vit? vit stands for video in terminal
+although, when you do it it opens a new window
+this was made for a random reason
+please know this is a beta and there probably Will be bugs (i had a issue with something in it myself)
 ---
 
 ## Install (Arch Linux)
@@ -28,21 +19,13 @@ cd vit
 bash install.sh
 ```
 
-The installer will:
-- Install `ffmpeg`, `libcaca`, `mpv`, and `yt-dlp` via pacman/pip if missing
-- Clone this repo to `~/.local/share/vit`
-- Symlink `vit` and `video-in-terminal` into `~/.local/bin`
-- Add `~/.local/bin` to your PATH if needed
-
----
-
 ## Usage
 
 ```bash
 vit                              # prompts you for a URL
 video-in-terminal                # same thing, longer alias
 
-vit https://youtu.be/dQw4w9WgXcQ   # pass URL directly
+vit https://youtu.be/dQw4w9WgXcQ (Don't search the link plz)   # pass URL directly
 ```
 
 ### Controls (while playing)
