@@ -95,11 +95,10 @@ play_video() {
   #   --really-quiet     → suppress mpv log spam in terminal
   #   --no-video-aspect  → let caca use full terminal width
   #   ytdl format opts   → best quality with merged audio
-  mpv \
+  CACA_DRIVER=ncurses mpv \
     --vo=caca \
     --really-quiet \
     --msg-level=all=no \
-    --geometry="${COLS}x${ROWS}" \
     --ytdl-format="bestvideo[height<=480]+bestaudio/best[height<=480]/best" \
     --ytdl-raw-options="no-playlist=" \
     "$URL"
