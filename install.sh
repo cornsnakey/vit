@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# install.sh — sets up the `vit` / `video-in-terminal` command on Arch Linux and Debian/Ubuntu
 set -e
 
-REPO_URL="https://github.com/cornsnakey/vit" 
+REPO_URL="https://github.com/cornsnakey/vit"
 INSTALL_DIR="$HOME/.local/share/vit"
 BIN_DIR="$HOME/.local/bin"
 
@@ -18,7 +17,6 @@ echo -e "${CYN}${BLD} VIT Installer${RST}"
 echo -e " ─────────────────────────────"
 echo ""
 
-# ── 0. detect distro / package manager ─────────────────────────────────────
 if command -v pacman &>/dev/null; then
     DISTRO="arch"
 elif command -v apt-get &>/dev/null; then
@@ -29,8 +27,7 @@ else
     exit 1
 fi
 
-# ── 1. install dependencies ─────────────────────────────────────────────────
-echo -e "${BLD}[1/4] Checking dependencies (${DISTRO})...${RST}"
+echo -e "${BLD}Checking dependencies (${DISTRO})...${RST}"
 
 if [[ "$DISTRO" == "arch" ]]; then
     PACMAN_PKGS=()
@@ -97,8 +94,7 @@ fi
 
 echo ""
 
-# ── 2. clone / update repo ────────────────────────────────────────────────────
-echo -e "${BLD}[2/4] Setting up vit...${RST}"
+echo -e "${BLD}Setting up vit...${RST}"
 mkdir -p "$INSTALL_DIR"
 if [[ -d "$INSTALL_DIR/.git" ]]; then
     echo -e " Updating existing install..."
@@ -111,16 +107,14 @@ chmod +x "$INSTALL_DIR/vit.sh"
 echo -e " ${GRN}✔ Files ready at $INSTALL_DIR${RST}"
 echo ""
 
-# ── 3. create symlinks ────────────────────────────────────────────────────────
-echo -e "${BLD}[3/4] Installing commands...${RST}"
+echo -e "${BLD}Installing commands...${RST}"
 mkdir -p "$BIN_DIR"
 ln -sf "$INSTALL_DIR/vit.sh" "$BIN_DIR/vit"
 ln -sf "$INSTALL_DIR/vit.sh" "$BIN_DIR/video-in-terminal"
 echo -e " ${GRN}✔ Commands linked:${RST} vit / video-in-terminal"
 echo ""
 
-# ── 4. PATH check ─────────────────────────────────────────────────────────────
-echo -e "${BLD}[4/4] Checking PATH...${RST}"
+echo -e "${BLD}Checking PATH...${RST}"
 if echo "$PATH" | grep -q "$BIN_DIR"; then
     echo -e " ${GRN}✔ $BIN_DIR is already in your PATH${RST}"
 else
