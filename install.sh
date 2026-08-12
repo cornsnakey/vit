@@ -2,7 +2,7 @@
 # install.sh — sets up the `vit` / `video-in-terminal` command on Arch Linux and Debian/Ubuntu
 set -e
 
-REPO_URL="https://github.com/cornsnakey/vit" # ← replace before publishing
+REPO_URL="https://github.com/cornsnakey/vit" 
 INSTALL_DIR="$HOME/.local/share/vit"
 BIN_DIR="$HOME/.local/bin"
 
